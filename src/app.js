@@ -3,20 +3,21 @@ import {StackNavigator, TabNavigator} from 'react-navigation'
 import {Theme, Color} from './components/theme'
 import Home from './scene/home'
 import Pickup from './scene/pickup'
+import Angkut from './scene/angkut'
 import Account from './scene/account'
 
 const Stack = TabNavigator({
     Product : {
         screen : Home
     },
-    Angkut : {
+    Pickup : {
         screen : Pickup
     },
     Account : {
         screen : Account
     }
 }, {
-    initialRouteName : 'Angkut',
+    initialRouteName : 'Pickup',
     tabBarPosition : 'bottom',
     tabBarOptions : {
         inactiveBackgroundColor : Color.primary,
@@ -29,6 +30,9 @@ const Stack = TabNavigator({
 const App = StackNavigator({
     Home : {
         screen : Stack
+    },
+    Angkut : {
+        screen : Angkut
     }
 }, {
     initialRouteName : 'Home',
@@ -37,6 +41,7 @@ const App = StackNavigator({
         headerStyle : {
             backgroundColor : Color.primary
         },
+        headerTintColor : 'white',
         headerTitleStyle : {
             color: Color.default
         }
